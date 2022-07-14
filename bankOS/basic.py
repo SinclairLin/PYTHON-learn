@@ -5,14 +5,14 @@ class BankAccount:
         self.userAccount = userAccount
         self.balance = 0.0
 
-    def PrintBalance(self):   #print 余额
+    def PrintBalance(self):  # print 余额
         print('Your balance is ', self.balance)
 
-    def Save(self):   #存
+    def Save(self):  # 存
         print('Please enter a number: ')
         self.balance += float(input())
 
-    def Withdraw(self):   #取
+    def Withdraw(self):  # 取
         print('Please enter a number: ')
         self.balance -= float(input())
 
@@ -34,7 +34,7 @@ class BankAccount:
             print('error')
 
 
-myAccount = BankAccount("ts", 114514)
+myAccount = BankAccount("聂哥", 114514)
 print('Hello! ', myAccount.userName, myAccount.userAccount)
 while 1:
     myAccount.ff()
