@@ -1,6 +1,8 @@
 class BankAccount:
 
     def __init__(self, user_name, user_account):
+        self.user_name = user_name
+        self.user_account = user_account
         self.userName = user_name
         self.userAccount = user_account
         self.balance = 0.0
@@ -36,13 +38,16 @@ class BankAccount:
 
 class InterestAccount(BankAccount):  # 继承BankAccount 类
 
+
+    def save(self):    # 对父类的save 方法进行重构
+
     def __init__(self, user_name, user_account):
         super().__init__(user_name, user_account)
         self.user_name = user_name
         self.user_account = user_account
         self.balance = 0.0
-
-    def save(self):
+        
+    def save(self): 
         interest = 0.05  # 年利率
         print('存多少: ')
         self.balance += float(input())
@@ -50,6 +55,7 @@ class InterestAccount(BankAccount):  # 继承BankAccount 类
         save_years = int(input())
         self.balance = self.balance * (1.0 + interest * save_years)  # 计算X年后余额
         print(save_years,' 年后,余额为: ',self.balance)
+
 
     # def add_interest(self):  # 计算利息
     #     self.Interest = 0.05
